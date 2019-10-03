@@ -1,0 +1,14 @@
+name: 'Build Twasi Plugin'
+description: 'Build your Twasi Plugin'
+author: 'Twasi'
+inputs: 
+  java-version:
+    description: 'The JDK version to make available on the path. Takes a whole or semver Jdk version, or 1.x syntax (e.g. 1.8 => Jdk 8.x)'
+    required: true
+  architecture:
+    description: 'The architecture (x86, x64) of the JDK.'
+    required: true
+    default: 'x64'
+runs:
+  using: 'node12'
+  main: 'lib/build-twasi-plugin.js'
