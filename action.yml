@@ -1,10 +1,7 @@
 name: 'Build Twasi Plugin'
 description: 'Build your Twasi Plugin'
 author: 'Twasi'
-inputs: 
-  plugin-name:
-    description: 'The name of the plugin'
-    required: true
+inputs: {}
 runs:
   using: 'node12'
   main: 'lib/build-twasi-plugin.js'
