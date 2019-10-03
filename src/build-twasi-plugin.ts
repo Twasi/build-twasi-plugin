@@ -5,7 +5,10 @@ import build from './build';
 
 async function run() {
   try {
-    const pluginYmlRaw = fs.readFileSync('./src/main/resources/plugin.yml', 'utf8');
+    const pluginYmlRaw = fs.readFileSync(
+      './src/main/resources/plugin.yml',
+      'utf8'
+    );
     const pluginYml = yaml.parse(pluginYmlRaw);
     console.log(`Building plugin ${pluginYml['name']}`);
 
