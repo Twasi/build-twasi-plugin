@@ -3,7 +3,7 @@ import build from './build';
 
 async function run() {
   try {
-    let pluginName = core.getInput('pluginName', { required: true });
+    let pluginName = core.getInput('plugin-name', {required: true});
 
     console.log(`Building plugin ${pluginName}`);
 
