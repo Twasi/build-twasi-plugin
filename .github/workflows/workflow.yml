@@ -3,10 +3,7 @@ on: [push]
 jobs:
   run:
     name: Run
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
-        operating-system: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -16,11 +13,8 @@ jobs:
       with:
         version: 10.x
 
-    - name: npm install
-      run: npm install
+    - name: Install packages
+      run: yarn
 
-    - name: Lint
-      run: npm run format-check
-
-    - name: npm test
-      run: npm test
+    - name: Build
+      run: yarn run build
