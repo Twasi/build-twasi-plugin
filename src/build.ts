@@ -26,8 +26,9 @@ if (!tempDirectory) {
   tempDirectory = path.join(baseLocation, 'actions', 'temp');
 }
 
-async function runBuild(pluginName: string) {
-  await exec.exec('mvn clean compile package');
+async function runBuild(pluginName: string, version: string) {
+  await exec.exec(`mvn versions:set -DnewVersion=${version}`)
+  await exec.exec('mvn clean compile package -Dregistry=https://maven.pkg.github.com/Twasi -Dtoken=GH_TOKEN');
 }
 
 export default {

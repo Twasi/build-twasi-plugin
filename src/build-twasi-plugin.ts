@@ -10,9 +10,13 @@ async function run() {
       'utf8'
     );
     const pluginYml = yaml.parse(pluginYmlRaw);
-    console.log(`Building plugin ${pluginYml['name']}`);
 
-    await build.runBuild(pluginYml['name']);
+    const pluginName = pluginYml['name'];
+    const pluginVersion = pluginYml['version'];
+
+    console.log(`Building plugin ${pluginName} on ${pluginVersion}`);
+
+    await build.runBuild(pluginName, pluginVersion);
   } catch (error) {
     core.setFailed(error.message);
   }
