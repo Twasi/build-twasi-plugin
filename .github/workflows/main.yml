@@ -11,7 +11,7 @@ jobs:
     - name: Set Node.js 10.x
       uses: actions/setup-node@master
       with:
-        version: 10.x
+        node-version: 10.x
 
     - name: Install packages
       run: yarn
@@ -26,4 +26,4 @@ jobs:
       run: git config user.email info@twasi.net && git config user.name "Twasi CICD" && git add -A && git commit -m "deployment"
 
     - name: Push to github
-      run: git git push https://{{secrets.GH_USER}}:{{secrets.GH_TOKEN}}@github.com/Twasi/build-twasi-plugin.git deployment
+      run: git push https://{{secrets.GH_USER}}:{{secrets.GH_TOKEN}}@github.com/Twasi/build-twasi-plugin.git deployment
