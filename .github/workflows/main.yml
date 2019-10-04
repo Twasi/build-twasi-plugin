@@ -26,4 +26,4 @@ jobs:
       run: git config user.email info@twasi.net && git config user.name "Twasi CICD" && git add -A && git commit -m "deployment"
 
     - name: Push to github
-      run: git push https://{{secrets.GH_USER}}:{{secrets.GH_TOKEN}}@github.com/Twasi/build-twasi-plugin.git deployment
+      run: git push https://${{secrets.GH_USER}}:${{secrets.GH_TOKEN}}@github.com/Twasi/build-twasi-plugin.git deployment
