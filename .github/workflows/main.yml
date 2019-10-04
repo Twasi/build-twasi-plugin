@@ -27,6 +27,6 @@ jobs:
 
     - name: Push to github
       uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: deployment
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        branch: deployment
