@@ -22,5 +22,11 @@ jobs:
     - name: Remove gitignore
       run: rm .gitignore
 
-    - name: Deploy
-      run: git commit -m "deployment" && git push -u origin deployment
+    - name: Commit
+      run: git config user.email info@twasi.net && git config user.name "Twasi CICD" && git add -A && git commit -m "deployment"
+
+    - name: Push to github
+      uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: deployment
