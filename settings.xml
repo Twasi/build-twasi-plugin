@@ -26,11 +26,11 @@
         </profile>
     </profiles>-->
 
-    <servers>
+    <!--<servers>
         <server>
             <id>github</id>
             <username>${server.username}</username>
             <password>${server.password}</password>
         </server>
-    </servers>
+    </servers>-->
 </settings>
