@@ -6,7 +6,7 @@ async function runBuild(pluginName: string, version: string) {
 
   await exec.exec(`${mvn} versions:set -DnewVersion=${version}`);
   await exec.exec(
-    `${mvn} clean compile package deploy -DaltDeploymentRepository=central::default::https://artifactory.twasi.net/artifactory/libs-release-local -Dserver.password=$ARTIFACTORY_PASSWORD -Dserver.username=$ARTIFACTORY_USER`
+    `${mvn} clean compile package deploy`
   );
 }
 
